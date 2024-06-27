@@ -80,7 +80,7 @@ public class CategoriesController
     {
         try
         {
-            categoryDao.create(category);
+            categoryDao.update(id, category);
         }
         catch(Exception ex)
         {

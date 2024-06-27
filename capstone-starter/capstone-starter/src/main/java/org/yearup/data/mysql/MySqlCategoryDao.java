@@ -1,14 +1,10 @@
 package org.yearup.data.mysql;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.stereotype.Component;
 import org.yearup.data.CategoryDao;
 import org.yearup.models.Category;
-import org.yearup.models.Product;
-import org.yearup.models.User;
-
 import javax.sql.DataSource;
-import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +44,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao {
         String sql = "SELECT * FROM users WHERE user_id = ?";
         try (Connection connection = getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, categoryId);
+            statement.setInt(0, categoryId);
 
             ResultSet row = statement.executeQuery();
 

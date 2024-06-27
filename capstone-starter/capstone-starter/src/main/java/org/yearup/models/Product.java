@@ -7,7 +7,7 @@ public class Product
     private int productId;
     private String name;
     private BigDecimal price;
-    private int categoryId;
+    private int category_Id;
     private String description;
     private String color;
     private int stock;
@@ -18,12 +18,12 @@ public class Product
     {
     }
 
-    public Product(int productId, String name, BigDecimal price, int categoryId, String description, String color, int stock, boolean isFeatured, String imageUrl)
+    public Product(int productId, String name, BigDecimal price, int category_Id, String description, String color, int stock, boolean isFeatured, String imageUrl)
     {
         this.productId = productId;
         this.name = name;
         this.price = price;
-        this.categoryId = categoryId;
+        this.category_Id = category_Id;
         this.description = description;
         this.color = color;
         this.stock = stock;
@@ -61,14 +61,14 @@ public class Product
         this.price = price;
     }
 
-    public int getCategoryId()
+    public int getCategory_Id()
     {
-        return categoryId;
+        return category_Id;
     }
 
-    public void setCategoryId(int categoryId)
+    public void setCategory_Id(int category_Id)
     {
-        this.categoryId = categoryId;
+        this.category_Id = category_Id;
     }
 
     public String getDescription()

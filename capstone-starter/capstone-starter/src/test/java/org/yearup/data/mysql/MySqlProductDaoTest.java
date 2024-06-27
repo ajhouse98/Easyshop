@@ -30,7 +30,7 @@ class MySqlProductDaoTest extends BaseDaoTestClass
             setProductId(1);
             setName("Smartphone");
             setPrice(new BigDecimal("499.99"));
-            setCategoryId(1);
+            setCategory_Id(1);
             setDescription("A powerful and feature-rich smartphone for all your communication needs.");
             setColor("Black");
             setStock(50);
