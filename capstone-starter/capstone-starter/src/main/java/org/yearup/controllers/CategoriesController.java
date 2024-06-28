@@ -43,7 +43,7 @@ public class CategoriesController
 
     @GetMapping("{id}")
     @PreAuthorize("permitAll()")
-    public Category getById(@PathVariable int id )
+    public Category getById (@PathVariable int id )
     {
         try
         {
@@ -60,6 +60,7 @@ public class CategoriesController
         }
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping()
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Category addCategory(@RequestBody Category category)
@@ -88,6 +89,7 @@ public class CategoriesController
         }
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteCategory(@PathVariable int id)

@@ -41,10 +41,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao {
     @Override
     public Category getById(int categoryId) {
         // get category by id
-        String sql = "SELECT * FROM users WHERE user_id = ?";
+        String sql = "SELECT * FROM categories WHERE category_id = ?";
         try (Connection connection = getConnection()) {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(0, categoryId);
+            statement.setInt(1, categoryId);
 
             ResultSet row = statement.executeQuery();
 
@@ -87,9 +87,9 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao {
         try (Connection connection = getConnection())
         {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(0, category.getCategoryId());
-            statement.setString(1, category.getName());
-            statement.setString(2, category.getDescription());
+            statement.setInt(1, category.getCategoryId());
+            statement.setString(2, category.getName());
+            statement.setString(3, category.getDescription());
 
             statement.executeUpdate();
         }
@@ -107,7 +107,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao {
         try (Connection connection = getConnection())
         {
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(0, categoryId);
+            statement.setInt(1, categoryId);
 
             statement.executeUpdate();
         }
